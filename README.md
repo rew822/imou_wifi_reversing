@@ -26,7 +26,7 @@ python3 -m venv .venv
 .venv/bin/pip install cryptography
 ```
 
-Make sure your computer can reach the camera, then configure its Wi-Fi connection:
+Make sure your computer can reach the camera  by connecting to the cameras own Access Point (the password is in the QR code on the back SC:<Password>), then configure its Wi-Fi connection:
 
 ```bash
 .venv/bin/python imou_wifi_config.py \
@@ -86,7 +86,8 @@ The password is masked in terminal output. Credentials are sent to the camera in
 
 ### Connection refused or timed out
 
-- Confirm that the IP address belongs to the camera.
+- Confirm that the IP address belongs to the camera and is pingable
+- Check if connected to the cameras own Access Point (the password is in the QR code on the back SC:<Password>), if there is no Access Point reset the camera
 - Make sure the computer and camera can reach each other on the local network.
 - Check that a firewall is not blocking TCP port `37777`.
 - Run the `--test-rsa` command before attempting configuration.
